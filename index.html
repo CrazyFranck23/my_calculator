@@ -15,40 +15,97 @@
     <body>
         <section class="container">
             <section class="calculator">
+                <h1>The Calculator</h1>
                 <form>
-                    <div class="display">
-                        <input type="text" name="display">
+                    <div class="calculator1-box">
+                        <div class="display">
+                            <input type="text" name="display1">
+                        </div>
+                        <div>
+                            <input class="operator" id="new-width" type="button" value="DEL" onclick="display1.value = display1.value.toString().slice(0, -1)">  <!--Delete button-->
+                            <input class="operator" id="new-width" type="button" value="AC" onclick="display1.value = '' ">  <!--All Clear button-->
+                        </div>
+                        <div>
+                            <input type="button" value="1" onclick="display1.value += '1' ">
+                            <input type="button" value="2" onclick="display1.value += '2' ">
+                            <input type="button" value="3" onclick="display1.value += '3' ">
+                        </div>
+                        <div>
+                            <input type="button" value="4" onclick="display1.value += '4' ">
+                            <input type="button" value="5" onclick="display1.value += '5' ">
+                            <input type="button" value="6" onclick="display1.value += '6' ">
+                        </div>
+                        <div>
+                            <input type="button" value="7" onclick="display1.value += '7' ">
+                            <input type="button" value="8" onclick="display1.value += '8' ">
+                            <input type="button" value="9" onclick="display1.value += '9' ">
+                        </div>
+                        <div>
+                            <input type="button" value="-" onclick="display1.value += '-' ">
+                            <input type="button" value="0" onclick="display1.value += '0' ">
+                            <input class="operator" type="button" value="." onclick="display1.value += '.' ">
+                        </div>
                     </div>
-                    <div>
-                        <input class="operator" type="button" value="AC" onclick="display.value = '' ">  <!--All Clear button-->
-                        <input class="operator" type="button" value="DE" onclick="display.value = display.value.toString().slice(0, -1)">  <!--Delete button-->
-                        <input class="operator" type="button" value="." onclick="display.value += '.' ">
-                        <input class="operator" type="button" value="&divide" onclick="display.value += '&divide' ">
+
+                    <div class="operator-box">
+                        <div class="display">
+                            <input type="text" name="display">
+                        </div>
+                        <div class="positioning-operators">
+                            <input class="operator" type="button" value="+" onclick="display.value = '+' ">
+                            <input class="operator" type="button" value="-" onclick="display.value = '-' ">
+                            <input class="operator" type="button" value="*" onclick="display.value = '*' ">
+                            <input class="operator" type="button" value="&divide" onclick="display.value = '&divide' ">
+                        </div>
                     </div>
-                    <div>
-                        <input type="button" value="7" onclick="display.value += '7' ">
-                        <input type="button" value="8" onclick="display.value += '8' ">
-                        <input type="button" value="9" onclick="display.value += '9' ">
-                        <input class="operator" type="button" value="*" onclick="display.value += '*' ">
+
+                    <div class="calculator2-box">
+                        <div class="display">
+                            <input type="text" name="display2">
+                        </div>
+                        <div>
+                            <input class="operator" id="new-width" type="button" value="DEL" onclick="display2.value = display2.value.toString().slice(0, -1)">  <!--Delete button-->
+                            <input class="operator" id="new-width" type="button" value="AC" onclick="display2.value = '' ">  <!--All Clear button-->
+                        </div>
+                        <div>
+                            <input type="button" value="1" onclick="display2.value += '1' ">
+                            <input type="button" value="2" onclick="display2.value += '2' ">
+                            <input type="button" value="3" onclick="display2.value += '3' ">
+                        </div>
+                        <div>
+                            <input type="button" value="4" onclick="display2.value += '4' ">
+                            <input type="button" value="5" onclick="display2.value += '5' ">
+                            <input type="button" value="6" onclick="display2.value += '6' ">
+                        </div>
+                        <div>
+                            <input type="button" value="7" onclick="display2.value += '7' ">
+                            <input type="button" value="8" onclick="display2.value += '8' ">
+                            <input type="button" value="9" onclick="display2.value += '9' ">
+                        </div>
+                        <div>
+                            <input type="button" value="-" onclick="display2.value += '-' ">
+                            <input type="button" value="0" onclick="display2.value += '0' ">
+                            <input class="operator" type="button" value="." onclick="display2.value += '.' ">
+                        </div>
                     </div>
-                    <div>
-                        <input type="button" value="4" onclick="display.value += '4' ">
-                        <input type="button" value="5" onclick="display.value += '5' ">
-                        <input type="button" value="6" onclick="display.value += '6' ">
-                        <input class="operator" type="button" value="-" onclick="display.value += '-' ">
-                    </div>
-                    <div>
-                        <input type="button" value="1" onclick="display.value += '1' ">
-                        <input type="button" value="2" onclick="display.value += '2' ">
-                        <input type="button" value="3" onclick="display.value += '3' ">
-                        <input class="operator" type="button" value="+" onclick="display.value += '+' ">
-                    </div>
-                    <div>
-                        <input type="button" value="00" onclick="display.value += '00' ">
-                        <input type="button" value="0" onclick="display.value += '0' ">
-                        <input class="equal operator" type="button" value="=" onclick="display.value = eval(display.value)">
+
+                    <div class="equal-box">
+                        <input class="equal operator" type="button" value="=" onclick="displayfinal.value = eval(displayfinal.value)">
+                        <!-- Bien evidemment le equal ne va pas marcher car on a plusieurs display - Vais gérer dans le JS -->
+                        <div class="display disp-equal-position">
+                            <input type="text" name="displayfinal">
+                        </div>
                     </div>
                 </form>
+
+                <section class="options-box">
+                    <div class="options">
+                        <button class="opt-button" type="button" onclick="alert('Saved !')">Save Locally</button>
+                    </div>
+                    <div class="options opt2">
+                        <button class="opt-button" type="button" onclick="alert('Restored !')">Restore</button>
+                    </div>
+                </section>
             </section>
         </section>
     </body>
